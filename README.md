@@ -25,8 +25,8 @@ This dual-path design means the system keeps working locally (buzzer/SMS/LCD) ev
                         ┌─────────────────────────────┐
                         │     TX Node (ESP32 #1)      │
                         │                             │
-                        │ Soil Moisture + Rain        │
-                        │ DHT11 (Temp + Humidity)     │
+                        │ -Soil Moisture + Rain        │
+                        │ -DHT11 (Temp + Humidity)     │
                         └─────────────────────────────┘
                                        │
                ┌───────────────────────┴───────────┐
