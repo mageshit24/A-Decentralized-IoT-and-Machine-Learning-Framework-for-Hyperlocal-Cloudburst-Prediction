@@ -264,6 +264,8 @@ This is an academic prototype. Before deploying or sharing further, replace all 
 **Magesh**
 Final Year Major Project — IoT & Machine Learning for Disaster Risk Prediction
 
+📇 [LinkedIn](https://www.linkedin.com/in/magesh-hariram-k-6011132a4)
+
 ---
 
 ## 📄 License
