@@ -22,27 +22,30 @@ This dual-path design means the system keeps working locally (buzzer/SMS/LCD) ev
 ## 🏗️ System Architecture
 
 ```
-                         ┌─────────────────────────┐
-                         │   TX Node (ESP32 #1)     │
-                         │  Soil Moisture | Rain     │
-                         │  DHT11 (Temp + Humidity)  │
-                         └───────────┬───────────────┘
-                                     │
-                    ┌────────────────┼────────────────┐
-                    │                                  │
-              📡 LoRa 433MHz                     📶 WiFi (UDP:4210)
-                    │                                  │
-                    ▼                                  ▼
-       ┌─────────────────────────┐        ┌──────────────────────────┐
-       │   RX Node (ESP32 #2)    │        │     Flask ML Server       │
-       │  • 16x2 LCD Display      │        │  • RandomForest model     │
-       │  • Buzzer alarm          │        │    predicts Safe/Danger   │
-       │  • Blynk cloud dashboard │        │  • Logs to MySQL          │
-       │  • GSM SMS alert         │        │  • Sends result back to   │
-       │    on danger detection   │        │    ESP32 over UDP         │
-       └─────────────────────────┘        │  • Live web dashboard     │
-                                            │    (auto-refresh, 3s)     │
-                                            └──────────────────────────┘
+                        ┌─────────────────────────────┐
+                        │     TX Node (ESP32 #1)      │
+                        │                             │
+                        │ Soil Moisture + Rain        │
+                        │ DHT11 (Temp + Humidity)     │
+                        └─────────────────────────────┘
+                                       │
+               ┌───────────────────────┴───────────┐
+               │                                   │
+          LoRa 433MHz                       WiFi (UDP:4210)
+               │                                   │
+               ▼                                   ▼
+
+┌─────────────────────────────┐     ┌─────────────────────────────┐
+│     RX Node (ESP32 #2)      │     │       Flask ML Server       │
+│                             │     │                             │
+│ - 16x2 LCD Display          │     │ - RandomForest model        │
+│ - Buzzer alarm              │     │   predicts Safe/Danger      │
+│ - Blynk cloud dashboard     │     │ - Logs readings to MySQL    │
+│ - GSM SMS alert on          │     │ - Sends result back to      │
+│   danger detection          │     │   ESP32 over UDP            │
+│                             │     │ - Live web dashboard        │
+│                             │     │   (auto-refresh, 3s)        │
+└─────────────────────────────┘     └─────────────────────────────┘
 ```
 
 **Why decentralized?** Each node can independently trigger a local physical alarm (buzzer/LCD/SMS) via LoRa, without depending on internet connectivity — while the WiFi/UDP path simultaneously feeds the centralized ML pipeline for logging, prediction, and remote dashboard monitoring.
