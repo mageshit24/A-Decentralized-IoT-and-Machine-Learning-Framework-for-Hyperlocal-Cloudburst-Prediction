@@ -98,6 +98,51 @@ This dual-path design means the system keeps working locally (buzzer/SMS/LCD) ev
 
 ---
 
+## 📸 Output Screenshots
+
+### Live Web Dashboard
+
+<img width="700" alt="Flask live dashboard showing sensor readings and risk status" src="https://github.com/user-attachments/assets/3c61a5f3-d2e7-4ed2-a30b-fddcbc3f1579" />
+
+### Server Console (UDP Listener + ML Prediction Log)
+
+<img width="700" alt="Terminal output showing received sensor packets and predictions" src="https://github.com/user-attachments/assets/ac484758-1133-40b0-b923-855efc35f18b" />
+
+### Hardware Setup
+
+<table>
+  <tr>
+    <td align="center"><b>TX Node (Sensor Node)</b></td>
+    <td align="center"><b>RX Node (Alert Node)</b></td>
+  </tr>
+  <tr>
+    <td><img width="350" alt="TX ESP32 node with soil moisture, rain sensor, and DHT11 wiring" src="https://github.com/user-attachments/assets/52465406-8ee3-4d40-b5f1-c5401e328a9e" /></td>
+    <td><img width="350" alt="RX ESP32 node with LoRa, LCD, buzzer wiring" src="https://github.com/user-attachments/assets/7764a755-7990-407e-af96-ff5ec8a600ce" /></td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2"><img width="500" alt="RX ESP32 node alternate angle" src="https://github.com/user-attachments/assets/47da4d07-a864-45f4-9307-69161935e004" /></td>
+  </tr>
+</table>
+
+### Blynk App Dashboard & WiFi Hotspot Connection
+
+<table>
+  <tr>
+    <td align="center"><b>Blynk App</b></td>
+    <td align="center"><b>ESP32 Hotspot Connection</b></td>
+  </tr>
+  <tr>
+    <td><img width="350" alt="Blynk mobile app showing live sensor values" src="https://github.com/user-attachments/assets/97c68abf-95bd-4125-86db-1a98e7d1d13b" /></td>
+    <td><img width="350" alt="ESP32 connected via WiFi hotspot" src="https://github.com/user-attachments/assets/11996fda-fa77-45bf-a136-f8e6d0682bd5" /></td>
+  </tr>
+</table>
+
+### LCD Display Output
+
+<img width="500" alt="16x2 LCD showing soil, rain, temperature and humidity readings" src="https://github.com/user-attachments/assets/7ae1d94e-f397-419c-9e28-0312c5ab8013" />
+
+---
+
 ## ⚙️ Setup & Installation
 
 ### 1. Hardware Requirements
