@@ -122,9 +122,6 @@ This dual-path design means the system keeps working locally (buzzer/SMS/LCD) ev
     <td><img width="350" alt="TX ESP32 node with soil moisture, rain sensor, and DHT11 wiring" src="https://github.com/user-attachments/assets/52465406-8ee3-4d40-b5f1-c5401e328a9e" /></td>
     <td><img width="350" alt="RX ESP32 node with LoRa, LCD, buzzer wiring" src="https://github.com/user-attachments/assets/7764a755-7990-407e-af96-ff5ec8a600ce" /></td>
   </tr>
-  <tr>
-    <td align="center" colspan="2"><img width="500" alt="RX ESP32 node alternate angle" src="https://github.com/user-attachments/assets/47da4d07-a864-45f4-9307-69161935e004" /></td>
-  </tr>
 </table>
 
 ### Blynk App Dashboard & WiFi Hotspot Connection
